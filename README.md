@@ -17,29 +17,38 @@ The API supports the following functions:
   Accepts: item code
   eg: GET http://127.0.0.1:5000/api/v1.0/item/1
 
+* Create new Usesr:
+  POST
+  eg: POST '{"name":"Rohit Dua", "username":"rohitdua"}'  http://localhost:5000/api/v1.0/user
+
+* View Users:
+  GET
+  GET http://localhost:5000/api/v1.0/users/
+
 * Create New Item:
   POST json request to create new item.
   Accepts: A dictionary in json format with required parameters: ('code', 'name', 'size', 'color', 'quality')
-  eg: POST '{"quality":"Grade1","size":"XL","color":"white", "code":1, "name":"Glass", "user":"rohit"}'  http://localhost:5000/api/v1.0/item
+  eg: POST '{"quality":"Grade1","size":"XL","color":"white", "item_code":1, "name":"Glass", "username":"rohitdua"}'  http://localhost:5000/api/v1.0/item
+
 
 * Create New Item Variant:
   POST json request to create new item variant.
   Accepts: A dictionary in json format with required parameters: ('cost_price', 'selling_price', 'quantity', 'code')
-  eg: POST '{"cost_price":100, "selling_price":10, "quantity": 1, "code":1, "user":"Adrian"}'  http://localhost:5000/api/v1.0/variant
+  eg: POST '{"cost_price":100, "selling_price":10, "quantity": 1, "code":1, "username":"Adrian"}'  http://localhost:5000/api/v1.0/variant
 
 * Update Item Information:
   PUT json request to update item information.
   Accepts: A dictionary in json format with required target item id and information to change.
-  eg: PUT '{"quality":"great","size":"XL","color":"white", "user":"Mark"}' http://localhost:5000/api/v1.0/item/1
+  eg: PUT '{"quality":"great","size":"XL","color":"white", "username":"Mark"}' http://localhost:5000/api/v1.0/item/1
 
 * Update Item Variant Information:
   PUT json request to update item variant information.
   Accepts: A dictionary in json format with required target item id and information to change.
-  eg: PUT '{"quantity": 10, "user":"Mark"}' http://localhost:5000/api/v1.0/variant/1
+  eg: PUT '{"quantity": 10, "username":"Mark"}' http://localhost:5000/api/v1.0/variant/1
 
 * Delete Item:
   DELETE json request to delete item information.
-  eg: DELETE '{"user":"rohit"}' http://localhost:5000/api/v1.0/item/1
+  eg: DELETE '{"username":"rohit"}' http://localhost:5000/api/v1.0/item/1
 
 * Notifications:
   GET request to list all the notifications.(optional: user specific)
